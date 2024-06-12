@@ -1,12 +1,12 @@
-import API from "../api";
 import { useState, useEffect, useRef } from "react";
+import API from "../api";
 import Logo from "../assets/logo_new.png";
 import ProductCard from "../components/ProductCard";
 
 const Home = () => {
   const initialized = useRef(false);
   const [filter, setFilter] = useState("All");
-  const [categories, setCategories] = useState(["All"]); // initialized with All
+  const [categories, setCategories] = useState(["All"]); // initialized with "All"
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const Home = () => {
 
     fetchCategories();
     fetchProducts();
-  }, []); // Empty dependency array ensures this effect runs only once after the component mounts
+  }, []); // run once
 
   const filteredProducts =
     filter === "All"
