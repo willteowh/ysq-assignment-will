@@ -1,55 +1,81 @@
-# YSQ Assignment, by Will T.
+# YSQ Assignment by Will T.
 
 ## Installation
 
 ### Backend (Laravel)
 
-After git clone the project to the local, run terminal at the project directory, and navigate to Backend project folder with:
+1. Clone the project repository to your local machine:
 
-`cd backend`
+   ```bash
+   git clone <project_repository_url>
+   ```
 
-Run installation with:
+2. Navigate to the backend project folder:
 
-`composer install && php artisan key:generate`
+   ```bash
+   cd backend
+   ```
 
-Then, update your _.env_ file with your database configuration.
+3. Install dependencies and generate the application key:
 
-<code>
-DB_DATABASE=your_db_name<br>
-DB_USERNAME=your_db_username<br>
-DB_PASSWORD=your_db_password<br>
-</code>
+   ```bash
+   composer install
+   php artisan key:generate
+   ```
 
-Then, run php migration with database seeding
+4. Update the `.env` file with your database configuration:
 
-`php artisan migrate:refresh --seed`
+   ```env
+   DB_DATABASE=your_db_name
+   DB_USERNAME=your_db_username
+   DB_PASSWORD=your_db_password
+   ```
 
-Then, run storage link to serve resources (eg.: images) to public
+5. Run database migration with seeding:
 
-`php artisan storage:link`
+   ```bash
+   php artisan migrate:refresh --seed
+   ```
 
-Lastly, serve the php application by
+6. Create a symbolic link to serve resources (e.g., images) to the public:
 
-`php artisan serve`
+   ```bash
+   php artisan storage:link
+   ```
 
-By default, the URL and port should be _127.0.0.1:8000_
+7. Serve the PHP application:
+
+   ```bash
+   php artisan serve
+   ```
+
+   The default URL and port should be `127.0.0.1:8000`.
 
 ### Frontend (React)
 
-Navigate to Frontend project folder with:
+1. Navigate to the frontend project folder:
 
-`cd frontend`
+   ```bash
+   cd frontend
+   ```
 
-And run installation with:
+2. Install dependencies:
 
-`npm install`
+   ```bash
+   npm install
+   ```
 
-After that, create `.env` based on `.env.example`, and fill in API key and API URL that defined during Laravel Installation
+3. Create a `.env` file based on `.env.example`, and fill in the API key and API URL defined during Laravel installation:
 
-<code>
-REACT_APP_API_URL=LARAVEL_API_ENDPOINT<br>
-REACT_APP_STORAGE_URL=LARAVEL_STORAGE_ENDPOINT<br>
+   ```env
+   REACT_APP_API_URL=LARAVEL_API_ENDPOINT
+   REACT_APP_STORAGE_URL=LARAVEL_STORAGE_ENDPOINT
+   ```
 
-Next, serve the React application
+   The default URL and port should be `127.0.0.1:8000/api` and `127.0.0.1:8000/storage` respectively.
 
-`npm start`
+4. Serve the React application:
+
+   ```bash
+   npm start
+   ```
